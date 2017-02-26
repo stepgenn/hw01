@@ -3,6 +3,9 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" assignedExecutableTargets="true" buildAllGenerated="true">
     <generated>
       <config projectName="hw01" targetName="hw01" />
+      <config projectName="hw01" targetName="mbed" />
+      <config projectName="hw01" targetName="mbedd" />
+      <config projectName="hw01" targetName="nm" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true" GENERATION_OPTIONS="-D CMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++" GENERATION_PASS_SYSTEM_ENVIRONMENT="true">
@@ -12,24 +15,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9904c98a-1d1d-479f-bed5-ad9a34932da1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mbedtls/aesni.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mbedtls/check_config.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mbedtls/config.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mbedtls/ctr_drbg.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mbedtls/entropy.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mbedtls/entropy_poll.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mbedtls/padlock.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mbedtls/platform.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mbedtls/sha512.h" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ctr_drbg.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/entropy.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sha512.h" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/aes.h" afterPath="$PROJECT_DIR$/mbedtls/aes.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aesni.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/entropy_poll.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mbedtls/platform_time.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mbedtls/timing.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platform.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sha512.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/timing.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/hw01.iml" afterPath="$PROJECT_DIR$/.idea/hw01.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mbedtls/platform.h" afterPath="$PROJECT_DIR$/mbedtls/platform.h" />
     </list>
     <ignored path="hw01.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,73 +49,21 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="94" selection-start-line="6" selection-start-column="94" selection-end-line="6" selection-end-column="94" />
+            <state relative-caret-position="154">
+              <caret line="7" column="94" selection-start-line="7" selection-start-column="94" selection-end-line="7" selection-end-column="94" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ctr_drbg.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mbedtls/ctr_drbg.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="aes.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aes.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="343">
+              <caret line="99" column="57" selection-start-line="99" selection-start-column="57" selection-end-line="99" selection-end-column="57" />
               <folding>
-                <marker date="1476663452000" expanded="false" signature="19924:20063" ph="..." />
-                <marker date="1476663452000" expanded="false" signature="23282:23497" ph="..." />
-                <marker date="1476663452000" expanded="false" signature="30531:30654" ph="..." />
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="aesni.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mbedtls/aesni.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="padlock.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mbedtls/padlock.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="entropy_poll.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mbedtls/entropy_poll.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -137,13 +82,13 @@
         <entry file="file://$PROJECT_DIR$/mbedtls/platform.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="185">
-              <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="platform.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="platform.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/platform.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -163,9 +108,11 @@
       <list>
         <option value="$PROJECT_DIR$/mbedtls/aes.h" />
         <option value="$PROJECT_DIR$/mbedtls/aes.c" />
+        <option value="$PROJECT_DIR$/mbedtls/ctr_drbg.h" />
+        <option value="$PROJECT_DIR$/platform.h" />
+        <option value="$PROJECT_DIR$/mbedtls/platform.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/mbedtls/ctr_drbg.h" />
       </list>
     </option>
   </component>
@@ -250,6 +197,7 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\sGenn\Documents\GitHub\hw01\mbedtls" />
+      <recent name="C:\Users\sGenn\Documents\GitHub\hw01" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sGenn\Documents\GitHub\hw01" />
@@ -426,9 +374,24 @@
       <envs />
       <method />
     </configuration>
-    <list size="2">
+    <configuration default="false" name="nm" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="hw01" TARGET_NAME="nm" CONFIG_NAME="Debug">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="mbedd" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="hw01" TARGET_NAME="mbedd" CONFIG_NAME="Debug">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="mbed" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="hw01" TARGET_NAME="mbed" CONFIG_NAME="Debug">
+      <envs />
+      <method />
+    </configuration>
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.hw01" />
       <item index="1" class="java.lang.String" itemvalue="Application.Build All" />
+      <item index="2" class="java.lang.String" itemvalue="Application.nm" />
+      <item index="3" class="java.lang.String" itemvalue="Application.mbedd" />
+      <item index="4" class="java.lang.String" itemvalue="Application.mbed" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -446,12 +409,20 @@
       <updated>1487595967036</updated>
       <workItem from="1487595968431" duration="602000" />
       <workItem from="1487948646184" duration="758000" />
-      <workItem from="1487949639173" duration="12550000" />
+      <workItem from="1487949639173" duration="16954000" />
     </task>
+    <task id="LOCAL-00001" summary="add some other .h .c files from mbed tls">
+      <created>1488100795571</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1488100795571</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13910000" />
+    <option name="totallyTimeSpent" value="18314000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="2" width="1855" height="1086" extended-state="0" />
@@ -459,15 +430,15 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35939196" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35939196" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3995657" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -509,8 +480,14 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add some other .h .c files from mbed tls" />
+    <option name="LAST_COMMIT_MESSAGE" value="add some other .h .c files from mbed tls" />
+  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -526,7 +503,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -568,7 +547,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -587,16 +568,6 @@
         <state relative-caret-position="110">
           <caret line="17" column="71" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="71" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entropy.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="e#843#871#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -704,22 +675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="94" selection-start-line="6" selection-start-column="94" selection-end-line="6" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mbedtls/ctr_drbg.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -733,9 +688,9 @@
         <state relative-caret-position="185">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
-            <marker date="1476663452000" expanded="false" signature="19924:20063" ph="..." />
-            <marker date="1476663452000" expanded="false" signature="23282:23497" ph="..." />
-            <marker date="1476663452000" expanded="false" signature="30531:30654" ph="..." />
+            <marker date="1488100985986" expanded="false" signature="19924:20063" ph="..." />
+            <marker date="1488100985986" expanded="false" signature="23282:23497" ph="..." />
+            <marker date="1488100985986" expanded="false" signature="30531:30654" ph="..." />
           </folding>
         </state>
       </provider>
@@ -764,7 +719,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mbedtls/platform_time.h">
+    <entry file="file://$PROJECT_DIR$/platform.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -775,16 +730,66 @@
     <entry file="file://$PROJECT_DIR$/mbedtls/platform.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
-          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/platform.c">
+    <entry file="file://$PROJECT_DIR$/timing.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="18" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mbedtls/timing.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entropy.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sha512.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="94" selection-start-line="7" selection-start-column="94" selection-end-line="7" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mbedtls/platform_time.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="99" column="57" selection-start-line="99" selection-start-column="57" selection-end-line="99" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

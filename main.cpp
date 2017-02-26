@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string.h>
+#include <fstream>
 #include "mbedtls/aes.h"
 #include "mbedtls/entropy.h"
 #include "mbedtls/ctr_drbg.h"
@@ -65,18 +66,39 @@ bool encryptData() {
 	return true;
 }
 
+long int sizeOfInputFile(std::ifstream* file) {
+	std::streampos begin;
+	std::streampos end;
+	std::streampos cur;
 
+	file->seekg(0,std::ios::beg);
+	begin = file->tellg();
+	file->seekg(0,std::ios::end);
+	end = file->tellg();
+	file->seekg(cur);
+	return end - begin;
+}
 
 
 
 int main() {
 	std::string inputFilePath;
+
 	std::string outputFilePath;
 
 	std::cout << "Path to the input file:";
 	std::cin >> inputFilePath;
+	std::ifstream inputFile(inputFilePath, std::ios::in | std::ios::binary);
+	//std::ifstream inputFile("input.txt", std::ios::in | std::ios::binary);
+/*
 	std::cout << "Path to the output file:";
 	std::cin >> outputFilePath;
+	std::ofstream outputFile(outputFilePath, std::ios::out | std::ios::binary | std::ios::trunc);
+	//todo some fails?
+	//if(!inputFile.is_open())
+*/
+	long int inputFileSize = sizeOfInputFile(&inputFile);
+
 
 
 	return 0;
