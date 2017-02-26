@@ -2,7 +2,15 @@
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/ctr_drbg.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/mbedtls/aes.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/mbedtls/check_config.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/mbedtls/ctr_drbg.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/mbedtls/config.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/mbedtls/entropy.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/aes.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/entropy.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
