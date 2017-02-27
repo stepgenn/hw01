@@ -77,17 +77,19 @@ bool encryptData(std::ifstream* inputFile, std::ofstream* outputFile) {
 	long int inputLen = sizeOfInputFile(inputFile);
 	inputFile->seekg(0,std::ios::beg);
 	char inputChar[16];
+	unsigned char input[16];
 	unsigned char output[16];
 
 	while (inputLen >= 16) {
 		inputFile->read(inputChar,16);
-		unsigned char *input = reinterpret_cast<unsigned char *> (inputChar);
-		unsigned char* iv2(iv);
+		memcpy(input,reinterpret_cast<unsigned char *> (inputChar),16);
+		unsigned char ivv[16];
+		memcpy(ivv,iv, 16);
 		unsigned char tmp[16];
 		mbedtls_aes_crypt_cbc( &aes, MBEDTLS_AES_ENCRYPT, 16, iv, input, output );
-		mbedtls_aes_crypt_cbc( &aes, MBEDTLS_AES_DECRYPT, 16, iv2, output, tmp );
-		std::cout << "input data:" << input << "\nrecrypt data: " << tmp << std::endl;
-
+		std::cout << "input: " <<reinterpret_cast<char *> (input) << "    output" << reinterpret_cast<char *>(output) << std::endl;
+		mbedtls_aes_crypt_cbc( &aes, MBEDTLS_AES_DECRYPT, 16, ivv, output, tmp );
+		std::cout << "input: " << reinterpret_cast<char *> (output) << "    output" << reinterpret_cast<char *> (tmp) << std::endl;
 		outputFile->write(reinterpret_cast<char *> (output),16);
 		inputLen = inputLen-16;
 	}
@@ -102,39 +104,47 @@ bool encryptData(std::ifstream* inputFile, std::ofstream* outputFile) {
 		mbedtls_aes_crypt_cbc( &aes, MBEDTLS_AES_ENCRYPT, 16, iv, input, output );
 		outputFile->write(reinterpret_cast<char *> (output),16);
 	}
-
 	return true;        //TODO musi byt bool?
 }
 
 void decryptData(std::ifstream* inputFile){
 	mbedtls_aes_context aes;
 
-	unsigned char* key;
+	unsigned char key[32];
 	char keybuffer[32];
 	std::ifstream keyFile("outputs/encryptKey.key", std::ios::in | std::ios::binary);
 	keyFile.seekg(0,std::ios::beg);
 	keyFile.read(keybuffer,32);
-	key = reinterpret_cast<unsigned char *> (keybuffer);
+	memcpy(key,reinterpret_cast<unsigned char *> (keybuffer),32);
 	mbedtls_aes_setkey_enc( &aes, key, 256 );
 
 
-	unsigned char* iv;
+	unsigned char iv[16];
 	char ivbuffer[16];
-	std::ifstream ivFile("outputs/initzializationVector.key", std::ios::in | std::ios::binary);
+	std::ifstream ivFile("outputs/initVector.iv", std::ios::in | std::ios::binary);
 	ivFile.seekg(0,std::ios::beg);
 	ivFile.read(ivbuffer,16);
-	iv = reinterpret_cast<unsigned char *> (ivbuffer);
+	memcpy(iv,reinterpret_cast<unsigned char *> (ivbuffer),16);
 
 	std::ofstream decryptedData("outputs/decryptData", std::ios::out | std::ios::binary | std::ios::trunc);
 
 	long int inputLen = sizeOfInputFile(inputFile);
 	inputFile->seekg(0,std::ios::beg);
-	char inputChar[inputLen];
-	unsigned char output[inputLen];
-	inputFile->read(inputChar,inputLen);
-	unsigned char *input = reinterpret_cast<unsigned char *> (inputChar);
+	char inputChar[16];
+	unsigned char output[16];
+	unsigned char input[16];
+	while (inputLen >= 16) {
+		inputFile->read(inputChar,16);
+		memcpy(input,reinterpret_cast<unsigned char *> (inputChar),16);
+		mbedtls_aes_crypt_cbc( &aes, MBEDTLS_AES_DECRYPT, 16, iv, input, output );
+			decryptedData.write(reinterpret_cast<char *> (output),16);
+			inputLen = inputLen-16;
+	}
+/*	inputFile->read(inputChar,inputLen);
+	memcpy(input,reinterpret_cast<unsigned char *> (inputChar),inputLen);
 	mbedtls_aes_crypt_cbc( &aes, MBEDTLS_AES_DECRYPT, inputLen, iv, input, output);
 	decryptedData.write(reinterpret_cast<char *> (output),inputLen);
+ */
 }
 
 void countHas(std::ifstream* input, unsigned char* output) {
@@ -182,14 +192,14 @@ int main() {
 
 	//std::cout << "Path to the output file:";
 	//std::cin >> outputFilePath;
-	std::ofstream outputFile("outputs/output", std::ios::out | std::ios::binary | std::ios::trunc);
+	std::ofstream outputFile("outputs/output.aes", std::ios::out | std::ios::binary | std::ios::trunc);
 	//todo some fails?
 	//if(!inputFile.is_open())
 
 	encryptData(&inputFile,&outputFile);
 	hashData(&inputFile);
 	outputFile.close();
-	std::ifstream dataDec("outputs/output", std::ios::in | std::ios::binary);
+	std::ifstream dataDec("outputs/output.aes", std::ios::in | std::ios::binary);
 	decryptData(&dataDec);
 
 
